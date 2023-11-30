@@ -1,0 +1,16 @@
+import pandas as pd
+
+# Sample sales_data table
+data = {
+    'Item': ['A', 'B', 'A', 'C', 'B', 'A', 'C', 'B', 'A', 'C'],
+    'Unit Sold': [5, 10, 8, 12, 15, 9, 16, 11, 7, 13]
+}
+
+# Create a DataFrame from the sample data
+sales_data = pd.DataFrame(data)
+
+# Create a pivot table to find the total unit sold for each item
+pivot_table = pd.pivot_table(sales_data, values='Unit Sold', index='Item', aggfunc='sum')
+
+# Display the pivot table
+print(pivot_table)

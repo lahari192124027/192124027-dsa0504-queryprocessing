@@ -1,0 +1,33 @@
+import matplotlib.pyplot as plt
+from google.colab import files
+
+# Upload the text file with data
+uploaded = files.upload()
+
+# Assuming you've uploaded the file as 'test.txt'
+file_name = 'test.txt'
+
+# Read the data from the uploaded file
+with open(file_name, 'r') as file:
+    lines = file.readlines()
+
+# Extract x and y values from the text file
+x = []
+y = []
+for line in lines:
+    values = line.split()
+    x.append(float(values[0]))
+    y.append(float(values[1]))
+
+# Create a line plot
+plt.plot(x, y)
+
+# Add labels for x and y axes
+plt.xlabel("X Axis Label")
+plt.ylabel("Y Axis Label")
+
+# Add a title
+plt.title("Line Plot Example")
+
+# Display the plot
+plt.show()

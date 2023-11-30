@@ -1,0 +1,22 @@
+import matplotlib.pyplot as plt
+
+math_marks = [88, 92, 80, 89, 100, 80, 60, 100, 80, 34]
+science_marks = [35, 79, 79, 48, 100, 88, 32, 45, 20, 30]
+marks_range = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+# Create a scatter plot
+plt.scatter(math_marks, science_marks, s=100, c='blue', marker='o', label='Student Marks')
+
+# Set labels for X and Y axes
+plt.xlabel('Mathematics Marks')
+plt.ylabel('Science Marks')
+
+# Set a title for the scatter plot
+plt.title('Mathematics vs. Science Marks')
+
+# Display the marks range on the plot
+for i, txt in enumerate(marks_range):
+    plt.annotate(txt, (math_marks[i], science_marks[i]))
+
+plt.legend()
+plt.show()

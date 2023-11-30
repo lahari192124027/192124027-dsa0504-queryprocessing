@@ -1,0 +1,19 @@
+import pandas as pd
+
+# Sample sales_data table
+data = {
+    'Item': ['A', 'B', 'A', 'C', 'B', 'A', 'C', 'B', 'A', 'C'],
+    'Sale': [100, 200, 150, 300, 250, 180, 320, 220, 170, 310]
+}
+
+# Create a DataFrame from the sample data
+sales_data = pd.DataFrame(data)
+
+# Create a pivot table to find the maximum and minimum sale values for each item
+pivot_table = pd.pivot_table(sales_data, values='Sale', index='Item', aggfunc=[max, min])
+
+# Rename the columns for clarity
+pivot_table.columns = ['Max Sale', 'Min Sale']
+
+# Display the pivot table
+print(pivot_table)
